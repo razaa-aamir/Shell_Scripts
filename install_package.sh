@@ -8,9 +8,11 @@ note
 
 echo"************************INSTALLING $1 *********************"
 
+#Install
 sudo apt-get install
 sudo apt-get install $1 -y
 
+#systemctl commands
 sudo systemctl start $1
 sudo systemctl enable $1
 
