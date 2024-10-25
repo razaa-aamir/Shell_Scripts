@@ -10,4 +10,9 @@ read -p "Enter the permission" permission
 
 #Change the permission. [Here -R means Recursively]
 
- sudo chmod -R "$permission" "$path"
+ for file in "$path"/*; do
+          if [ -f "$file" ]; then  # Check if it's a file (not a directory)
+              chmod "$permission" "$file"
+              echo "Changed permissions of $file to $permission"
+          fi
+      done
