@@ -1,0 +1,13 @@
+#!/bin/bash
+
+<<note
+This script changes the permissions of multiple files in a directory based on user input.
+note
+
+# Get the path and required permission from the user
+read -p "Enter the path:" path
+read -p "Enter the permission" permission
+
+#Change the permission. [Here -R means Recursively]
+
+ sudo chmod -R "$permission" "$path"
